@@ -1,0 +1,25 @@
+{
+  "name": "@quartz/holidays",
+  "version": "1.0.0",
+  "description": "Quartz holidays",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Quartz/holidays.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Quartz/holidays/issues"
+  },
+  "homepage": "https://github.com/Quartz/holidays#readme",
+  "dependencies": {
+    "@18f/us-federal-holidays": "^1.4.0"
+  },
+  "devDependencies": {
+    "tape": "^4.11.0"
+  }
+}
