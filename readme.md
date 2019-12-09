@@ -1,5 +1,7 @@
 # Quartz holidays
 
+[![npm version](https://badge.fury.io/js/%40quartz%2Fholidays.png)](https://badge.fury.io/js/%40quartz%2Fholidays)
+
 Determine if a day is a Quartz holiday.
 
 ```
