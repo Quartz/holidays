@@ -4,7 +4,7 @@
 
 Determine if a day is a Quartz holiday.
 
-```
+```js
 const { isHoliday } = require( '@quartz/holidays' );
 
 // Is today a Quartz holiday?
@@ -21,7 +21,7 @@ Or get a list of all Quartz holidays for a given year. Note that `dateString` is
 formatted like the return values of `getDate` and `getMonth`. The `date`
 property is a `Date` instance.
 
-```
+```js
 const { getHolidays } = require( '@quartz/holidays' );
 
 console.log( getHolidays( '2019' ) );
