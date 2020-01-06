@@ -13,7 +13,7 @@ function getHolidays( year ) {
 
 	const fedHolidays = allForYear( year, options );
 
-	// Add Christmas Eve, New Year's Eve, and the day after Thanksgiving.
+	// Add the day after Thanksgiving.
 	const thanksgiving = fedHolidays.find( ( { name } ) => name.toLowerCase().includes( 'thanksgiving' ) );
 	const blackFriday = new Date( new Date( thanksgiving.date ).getTime() + 60 * 60 * 24 * 1000 );
 
@@ -24,16 +24,6 @@ function getHolidays( year ) {
 			name: 'Day after Thanksgiving',
 			date: blackFriday,
 			dateString: `${year}-${blackFriday.getUTCMonth() + 1}-${blackFriday.getUTCDate()}`,
-		},
-		{
-			name: 'Christmas Eve',
-			date: new Date( `${year}-12-24` ),
-			dateString: `${year}-12-24`,
-		},
-		{
-			name: 'New Year\'s Eve',
-			date: new Date( `${year}-12-31` ),
-			dateString: `${year}-12-31`,
 		},
 	].sort( ( a, b ) => a.date < b.date ? -1 : 1 );
 }
