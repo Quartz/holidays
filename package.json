@@ -1,6 +1,6 @@
 {
   "name": "@quartz/holidays",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Quartz holidays",
   "main": "index.js",
   "scripts": {
