@@ -1,5 +1,16 @@
 const { allForYear } = require( '@18f/us-federal-holidays' );
 
+// Sometimes we get the day off.
+const oneOffHolidays = {
+	2020: [
+		{
+			name: 'Monday after Indepedence Day',
+			date: new Date( '2020-07-06' ),
+			dateString: '2020-7-6',
+		},
+	],
+};
+
 function getHolidays( year ) {
 	// Expect a reasonable year. This code will die.
 	if ( ! /^20[0-9]{2}$/.test( year ) ) {
@@ -17,9 +28,17 @@ function getHolidays( year ) {
 	const thanksgiving = fedHolidays.find( ( { name } ) => name.toLowerCase().includes( 'thanksgiving' ) );
 	const blackFriday = new Date( new Date( thanksgiving.date ).getTime() + 60 * 60 * 24 * 1000 );
 
+	// Remove Veterans Day and Columbus Day.
+	const removeUnobserved = ( { name } ) => ! [ 'veterans', 'columbus' ].includes( name.toLowerCase() );
+
 	return [
-		// Remove Veterans Day.
-		...fedHolidays.filter( ( { name } ) => ! name.toLowerCase().includes( 'veteran' ) ),
+		...fedHolidays.filter( removeUnobserved ),
+		...( oneOffHolidays[ year ] || [] ),
+		{
+			name: 'Juneteenth',
+			date: new Date( `${year}-06-19` ),
+			dateString: `${year}-6-19`,
+		},
 		{
 			name: 'Day after Thanksgiving',
 			date: blackFriday,

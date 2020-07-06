@@ -25,6 +25,7 @@ test( 'getHolidays returns properly formatted response', t => {
 test( 'isHoliday works for known holidays and non-holidays', t => {
 	t.ok( isHoliday( new Date( '2018-12-25' ) ), 'Christmas 2018' );
 	t.ok( isHoliday( new Date( '2019-01-01' ) ), 'New Year\'s 2019' );
+	t.ok( isHoliday( new Date( '2023-06-19' ) ), 'Juneteenth 2023' );
 	t.ok( isHoliday( new Date( '2019-12-08' ), { weekends: true } ), 'a random Sunday' );
 
 	t.notOk( isHoliday( new Date( '2019-12-23' ) ), 'day before Christmas Eve' );
