@@ -8,6 +8,11 @@ const oneOffHolidays = {
 			date: new Date( '2020-07-06' ),
 			dateString: '2020-7-6',
 		},
+		{
+			name: 'Monday after Good Friday',
+			date: new Date( '2020-04-05' ),
+			dateString: '2020-4-5',
+		},
 	],
 };
 

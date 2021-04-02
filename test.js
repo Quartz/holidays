@@ -33,3 +33,8 @@ test( 'isHoliday works for known holidays and non-holidays', t => {
 
 	t.end();
 } );
+
+test( 'isHoliday works for one-offs', t => {
+	t.ok( isHoliday( new Date( '2020-4-5' ) ), 'COVID bonus' );
+	t.end();
+} )
